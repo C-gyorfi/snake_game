@@ -5,3 +5,6 @@ backup/*
 
 # test directories
 .pytest_cache
+
+# vscode
+settings.json
