@@ -7,6 +7,8 @@ verify_ssl = true
 pytest = "*"
 assertpy = "*"
 pytest-cov = "*"
+pylint = "*"
+autopep8 = "*"
 
 [packages]
 
