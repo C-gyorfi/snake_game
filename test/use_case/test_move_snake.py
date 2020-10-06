@@ -33,3 +33,34 @@ def test_move_one_unit_towards_north():
     MoveSnake().execute(stub_board, snake)
 
     assert_that(snake.current_location).is_equal_to([[0, 1]])
+
+
+def test_move_one_unit_towards_west():
+    current_location = [[0, 0]]
+    current_heading = 'W'
+    snake = Snake(current_location, current_heading)
+
+    MoveSnake().execute(stub_board, snake)
+
+    assert_that(snake.current_location).is_equal_to([[1, 0]])
+
+
+def test_move_one_unit_towards_south():
+    current_location = [[0, 3]]
+    current_heading = 'S'
+    snake = Snake(current_location, current_heading)
+
+    MoveSnake().execute(stub_board, snake)
+
+    assert_that(snake.current_location).is_equal_to([[0, 2]])
+
+
+def test_move_infinitely_towards_east():
+    current_location = [[0, 0]]
+    current_heading = 'E'
+    snake = Snake(current_location, current_heading)
+
+    for _ in range(3):
+        MoveSnake().execute(stub_board, snake)
+
+    assert_that(snake.current_location).is_equal_to([[3, 0]])
