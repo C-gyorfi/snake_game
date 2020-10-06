@@ -1,6 +1,7 @@
 # default output locations
 backup/*
 .env
+.coverage
 
 # test directories
 .pytest_cache
