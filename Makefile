@@ -5,4 +5,4 @@ shell:
 	pipenv shell  
 
 tests:
-	pipenv run pytest
+	pipenv run pytest --cov=src 
