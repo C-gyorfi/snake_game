@@ -16,7 +16,7 @@ def test_can_move_the_snake_infinitely_across_the_board():
       ['', '', '', '', ''],
       ['', '', '', '', '']
     ])
-    move_snake.execute(snake)
+    move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
       ['', '', '', '', ''],
       ['', '', '', '', ''],
@@ -24,7 +24,7 @@ def test_can_move_the_snake_infinitely_across_the_board():
       ['', '', '', '', ''],
       ['', '', '', '', '']
     ])
-    move_snake.execute(snake)
+    move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
       ['', '', '', '', ''],
       ['', '', '', '', ''],
@@ -32,7 +32,7 @@ def test_can_move_the_snake_infinitely_across_the_board():
       ['', '', '', '', ''],
       ['', '', '', '', '']
     ])
-    move_snake.execute(snake)
+    move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
       ['', '', '', '', ''],
       ['', '', '', '', ''],
