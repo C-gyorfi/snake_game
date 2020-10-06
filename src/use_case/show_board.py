@@ -1,5 +1,6 @@
 class ShowBoard:
-    def execute(self, _board, _snake):
+    @staticmethod
+    def execute(_board, _snake):
         return [
             ['', '', '', '', ''],
             ['', '', '', '', ''],
