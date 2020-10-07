@@ -6,7 +6,7 @@ from src.use_case.show_board import ShowBoard
 
 def test_can_move_the_snake_infinitely_across_the_board():
     board = [5, 5]
-    snake = Snake([[0, 0]], 'E')
+    snake = Snake([[0, 0]], 'W')
     move_snake = MoveSnake()
     show_board = ShowBoard()
 
