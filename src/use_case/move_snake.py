@@ -3,7 +3,7 @@ class MoveSnake:
     def execute(board, snake):
         head_location = MoveSnake.move_head(snake)
         MoveSnake.wrap_around_borders(board, head_location)
-        snake.current_location[0] = head_location
+        MoveSnake.update_location(snake, head_location)
 
     @staticmethod
     def move_head(snake):
@@ -30,3 +30,8 @@ class MoveSnake:
         location[1] = 0 if location[1] == board_height else location[1]
         location[0] = board_width - 1 if location[0] == -1 else location[0]
         location[1] = board_height - 1 if location[1] == -1 else location[1]
+
+    @staticmethod
+    def update_location(snake, head_location):
+        snake.current_location.insert(0, head_location)
+        snake.current_location.pop()
