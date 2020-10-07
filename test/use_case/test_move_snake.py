@@ -98,6 +98,7 @@ def test_move_infinitely_towards_south():
 
     assert_that(snake.current_location).is_equal_to([[0, 3]])
 
+
 def test_can_body_follow_the_head():
     current_location = [[0, 0], [1, 0], [2, 0]]
     current_heading = 'W'

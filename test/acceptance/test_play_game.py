@@ -13,31 +13,31 @@ def test_can_move_the_snake_infinitely_across_the_board():
     assert_that(show_board.execute(board, snake)).is_equal_to([
         ['', '', '', '', ''],
         ['', '', '', '', ''],
-        ['', '', 'S', '', ''],
         ['', '', '', '', ''],
-        ['', '', '', '', '']
+        ['', '', '', '', ''],
+        ['O', '', '', '', '']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
         ['', '', '', '', ''],
         ['', '', '', '', ''],
-        ['', 'S', '', '', ''],
         ['', '', '', '', ''],
-        ['', '', '', '', '']
+        ['', '', '', '', ''],
+        ['', '', '', '', 'O']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
         ['', '', '', '', ''],
         ['', '', '', '', ''],
-        ['S', '', '', '', ''],
         ['', '', '', '', ''],
-        ['', '', '', '', '']
+        ['', '', '', '', ''],
+        ['', '', '', 'O', '']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
         ['', '', '', '', ''],
         ['', '', '', '', ''],
-        ['', '', '', '', 'S'],
         ['', '', '', '', ''],
-        ['', '', '', '', '']
+        ['', '', '', '', ''],
+        ['', '', 'O', '', '']
     ])
