@@ -41,6 +41,11 @@ from src.domain.snake import Snake
         ['', '', '', '', '']
     ]
     ),
+    ([[0, 0]], [1, 1],
+     [
+        ['O']
+    ]
+    ),
 ])
 def test_can_draw_a_board_with_snake(
         current_location,

@@ -41,3 +41,23 @@ def test_can_move_the_snake_infinitely_across_the_board():
         ['', '', '', '', ''],
         ['', '', 'O', '', '']
     ])
+
+
+def test_can_move_the_snake_infinitely_across_any_size_of_board():
+    board = [6, 3]
+    snake = Snake([[0, 0]], 'W')
+    move_snake = MoveSnake()
+    show_board = ShowBoard()
+
+    assert_that(show_board.execute(board, snake)).is_equal_to([
+        ['', '', '', '', '', ''],
+        ['', '', '', '', '', ''],
+        ['O', '', '', '', '', '']
+    ])
+    for i in range(3):
+        move_snake.execute(board, snake)
+    assert_that(show_board.execute(board, snake)).is_equal_to([
+        ['', '', '', '', '', ''],
+        ['', '', '', '', '', ''],
+        ['', '', '', 'O', '', '']
+    ])
