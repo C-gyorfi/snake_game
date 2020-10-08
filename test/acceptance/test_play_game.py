@@ -62,3 +62,44 @@ def test_can_move_the_snake_infinitely_across_any_size_of_board():
         ['', '', '', '', '', ''],
         ['', '', '', 'O', '', '']
     ])
+
+
+def test_can_move_any_size_of_snake_infinitely_across_the_board():
+    board = Board(width=6, height=3)
+    snake = Snake([[0, 0], [1, 0], [2, 0]], 'W')
+    move_snake = MoveSnake()
+    show_board = ShowBoard()
+
+    assert_that(show_board.execute(board, snake)).is_equal_to([
+        ['', '', '', '', '', ''],
+        ['', '', '', '', '', ''],
+        ['O', '=', '=', '', '', '']
+    ])
+    for i in range(3):
+        move_snake.execute(board, snake)
+    assert_that(show_board.execute(board, snake)).is_equal_to([
+        ['', '', '', '', '', ''],
+        ['', '', '', '', '', ''],
+        ['', '', '', 'O', '=', '=']
+    ])
+
+# def test_can_turn_the_snake_in_any_direction():
+#     board = Board(width=4, height=4)
+#     snake = Snake([[0, 0]], 'W')
+#     move_snake = MoveSnake()
+#     show_board = ShowBoard()
+
+#     assert_that(show_board.execute(board, snake)).is_equal_to([
+#         ['', '', '', ''],
+#         ['', '', '', ''],
+#         ['', '', '', ''],
+#         ['O', '', '', '']
+#     ])
+#     turn_snake.execute('Left', )
+#     move_snake.execute(board, snake)
+#     assert_that(show_board.execute(board, snake)).is_equal_to([
+#         ['', '', '', ''],
+#         ['', '', '', ''],
+#         ['', '', '', ''],
+#         ['', 'O', '', '']
+#     ])

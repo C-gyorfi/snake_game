@@ -54,6 +54,21 @@ from src.domain.board import Board
         ['', '', '']
     ]
     ),
+    ([[0, 0], [1, 1], [2, 2]], Board(width=3, height=3),
+     [
+        ['', '', '='],
+        ['', '=', ''],
+        ['O', '', '']
+    ]
+    ),
+    ([[1, 0], [1, 1], [2, 1], [3, 1]], Board(width=4, height=4),
+     [
+        ['', '', '', ''],
+        ['', '', '', ''],
+        ['', '=', '=', '='],
+        ['', 'O', '', ''],
+    ]
+    ),
 ])
 def test_can_draw_a_board_with_snake(
         current_location,
