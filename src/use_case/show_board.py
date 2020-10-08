@@ -22,8 +22,8 @@ class ShowBoard:
     @staticmethod
     def draw_snake_on_board(board, snake):
         for i, row in enumerate(board):
-            y_coordinate_of_row = (len(board) - i) - 1
+            y_coordinate_of_board = (len(board) - i) - 1
             for j, coordinate in enumerate(snake.current_location):
-                if coordinate[1] == y_coordinate_of_row:
-                    row[coordinate[0]] = ShowBoard.HEAD if j == 0 else ShowBoard.BODY
+                if coordinate.y == y_coordinate_of_board:
+                    row[coordinate.x] = ShowBoard.HEAD if j == 0 else ShowBoard.BODY
         return board
