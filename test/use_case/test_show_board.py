@@ -3,10 +3,11 @@ from assertpy import assert_that
 from src.use_case.show_board import ShowBoard
 from src.domain.snake import Snake
 from src.domain.board import Board
+from src.domain.coordinate import Coordinate
 
 
 @pytest.mark.parametrize("current_location,board,expected_board", [
-    ([[2, 2]], Board(width=5, height=5),
+    ([Coordinate(x=2, y=2)], Board(width=5, height=5),
         [
             ['', '', '', '', ''],
             ['', '', '', '', ''],
@@ -15,7 +16,7 @@ from src.domain.board import Board
             ['', '', '', '', '']
     ]
     ),
-    ([[0, 0]], Board(width=5, height=5),
+    ([Coordinate(x=0, y=0)], Board(width=5, height=5),
         [
             ['', '', '', '', ''],
             ['', '', '', '', ''],
@@ -24,7 +25,7 @@ from src.domain.board import Board
             ['O', '', '', '', '']
     ]
     ),
-    ([[0, 4]], Board(width=5, height=5),
+    ([Coordinate(x=0, y=4)], Board(width=5, height=5),
         [
             ['O', '', '', '', ''],
             ['', '', '', '', ''],
@@ -33,7 +34,7 @@ from src.domain.board import Board
             ['', '', '', '', '']
     ]
     ),
-    ([[3, 4]], Board(width=5, height=5),
+    ([Coordinate(x=3, y=4)], Board(width=5, height=5),
      [
         ['', '', '', 'O', ''],
         ['', '', '', '', ''],
@@ -42,26 +43,28 @@ from src.domain.board import Board
         ['', '', '', '', '']
     ]
     ),
-    ([[0, 0]], Board(width=1, height=1),
+    ([Coordinate(x=0, y=0)], Board(width=1, height=1),
      [
         ['O']
     ]
     ),
-    ([[2, 2]], Board(width=3, height=3),
+    ([Coordinate(x=2, y=2)], Board(width=3, height=3),
      [
         ['', '', 'O'],
         ['', '', ''],
         ['', '', '']
     ]
     ),
-    ([[0, 0], [1, 1], [2, 2]], Board(width=3, height=3),
+    ([Coordinate(x=0, y=0), Coordinate(x=1, y=1), Coordinate(x=2, y=2)],
+     Board(width=3, height=3),
      [
         ['', '', '='],
         ['', '=', ''],
         ['O', '', '']
     ]
     ),
-    ([[1, 0], [1, 1], [2, 1], [3, 1]], Board(width=4, height=4),
+    ([Coordinate(x=1, y=0), Coordinate(x=1, y=1), Coordinate(x=2, y=1), Coordinate(x=3, y=1)],
+     Board(width=4, height=4),
      [
         ['', '', '', ''],
         ['', '', '', ''],
