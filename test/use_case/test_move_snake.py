@@ -1,8 +1,9 @@
 from assertpy import assert_that
 from src.use_case.move_snake import MoveSnake
 from src.domain.snake import Snake
+from src.domain.board import Board
 
-stub_board = [6, 6]
+stub_board = Board(width=6, height=6)
 
 
 def test_move_one_unit_towards_east():

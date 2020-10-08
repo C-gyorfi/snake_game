@@ -1,15 +1,15 @@
 class ShowBoard:
     @staticmethod
-    def execute(board_size, snake):
-        board = []
-        for height in range(board_size[1]):
+    def execute(board, snake):
+        drawn_board = []
+        for _n in range(board.height):
             row = []
-            for width in range(board_size[0]):
+            for _n in range(board.width):
                 row.append('')
-            board.append(row)
+            drawn_board.append(row)
 
-        for i, row in enumerate(board):
-            if snake.current_location[0][1] == (len(board) - i) - 1:
+        for i, row in enumerate(drawn_board):
+            if snake.current_location[0][1] == (len(drawn_board) - i) - 1:
                 row[snake.current_location[0][0]] = 'O'
 
-        return board
+        return drawn_board

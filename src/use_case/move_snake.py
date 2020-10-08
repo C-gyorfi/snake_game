@@ -24,12 +24,10 @@ class MoveSnake:
 
     @staticmethod
     def wrap_around_borders(board, location):
-        board_width = board[0]
-        board_height = board[1]
-        location[0] = 0 if location[0] == board_width else location[0]
-        location[1] = 0 if location[1] == board_height else location[1]
-        location[0] = board_width - 1 if location[0] == -1 else location[0]
-        location[1] = board_height - 1 if location[1] == -1 else location[1]
+        location[0] = 0 if location[0] == board.width else location[0]
+        location[1] = 0 if location[1] == board.height else location[1]
+        location[0] = board.width - 1 if location[0] == -1 else location[0]
+        location[1] = board.height - 1 if location[1] == -1 else location[1]
 
     @staticmethod
     def update_location(snake, head_location):
