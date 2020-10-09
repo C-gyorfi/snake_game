@@ -1,7 +1,7 @@
 class ShowBoard:
-    EMPTY_TILE = ''
-    HEAD = 'O'
-    BODY = '='
+    EMPTY_TILE = '□'
+    HEAD = '■'
+    BODY = '◙'
 
     @staticmethod
     def execute(board, snake):
