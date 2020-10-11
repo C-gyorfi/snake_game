@@ -1,5 +1,5 @@
 class ShowBoard:
-    EMPTY_TILE = '□'
+    EMPTY_TILE = ' '
     HEAD = '■'
     BODY = '◙'
 
