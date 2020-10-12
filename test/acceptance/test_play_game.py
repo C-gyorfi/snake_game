@@ -144,3 +144,31 @@ def test_can_turn_the_snake_in_any_direction():
         [' ', ' ', ' ', ' '],
         [' ', ' ', ' ', ' ']
     ])
+
+
+def test_snake_can_grow_when_feeding():
+    board = Board(width=4, height=4)
+    snake = Snake(
+        [
+            Coordinate(x=0, y=0),
+            Coordinate(x=3, y=0),
+        ],
+        'E'
+    )
+    food = [Coordinate(x=1, y=0)]
+
+    rendered_board = ShowBoard.execute(board, snake, food)
+    assert_that(rendered_board[3][0]).is_equal_to('■')
+    assert_that(ShowBoard.FRUITS).contains(rendered_board[3][1])
+    assert_that(rendered_board[3][2]).is_equal_to(' ')
+    assert_that(rendered_board[3][3]).is_equal_to('◙')
+    assert_that(len(snake.current_location)).is_equal_to(2)
+
+    MoveSnake().execute(board, snake, food)
+    rendered_board = ShowBoard.execute(board, snake, food)
+    assert_that(rendered_board[3][0]).is_equal_to('◙')
+    assert_that(rendered_board[3][1]).is_equal_to('■')
+    assert_that(rendered_board[3][2]).is_equal_to(' ')
+    assert_that(rendered_board[3][3]).is_equal_to('◙')
+    assert_that(food).is_empty()
+    assert_that(len(snake.current_location)).is_equal_to(3)
