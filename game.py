@@ -11,6 +11,7 @@ from src.use_case.show_board import ShowBoard
 board = Board(width=10, height=10)
 snake = Snake([Coordinate(x=0, y=0), Coordinate(
     x=1, y=0), Coordinate(x=2, y=0)], 'N')
+food = [Coordinate(x=5, y=5)]
 move_snake = MoveSnake()
 show_board = ShowBoard()
 turn_snake = TurnSnake()
@@ -45,16 +46,16 @@ def getDirection():
 
 game_over = False
 while not game_over:
-    for i, row in enumerate(show_board.execute(board, snake)):
+    for i, row in enumerate(show_board.execute(board, snake, food)):
         current_row = ' '.join(row)
         stdscr.addstr(i, 10, current_row)
     # update the screen
     stdscr.refresh()
     # wait for a bit
-    time.sleep(0.3)
+    time.sleep(0.1)
     direction = getDirection()
     turn_snake.execute(direction, snake)
-    move_snake.execute(board, snake)
+    move_snake.execute(board, snake, food)
 
 stdscr.clear()
 

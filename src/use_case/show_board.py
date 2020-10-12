@@ -37,7 +37,7 @@ class ShowBoard:
         else:
             for i, row in enumerate(board):
                 y_coordinate_of_board = (len(board) - i) - 1
-                for j, coordinate in enumerate(food):
+                for coordinate in food:
                     if coordinate.y == y_coordinate_of_board:
                         row[coordinate.x] = ShowBoard.FRUITS[0]
         return board
