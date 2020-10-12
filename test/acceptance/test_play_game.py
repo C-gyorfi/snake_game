@@ -14,35 +14,35 @@ def test_can_move_the_snake_infinitely_across_the_board():
     show_board = ShowBoard()
 
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['■', '□', '□', '□', '□']
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        ['■', ' ', ' ', ' ', ' ']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '■']
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', '■']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '■', '□']
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', '■', ' ']
     ])
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□'],
-        ['□', '□', '■', '□', '□']
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', '■', ' ', ' ']
     ])
 
 
@@ -53,16 +53,16 @@ def test_can_move_the_snake_infinitely_across_any_size_of_board():
     show_board = ShowBoard()
 
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□', '□'],
-        ['■', '□', '□', '□', '□', '□']
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        ['■', ' ', ' ', ' ', ' ', ' ']
     ])
     for i in range(3):
         move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '■', '□', '□']
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', '■', ' ', ' ']
     ])
 
 
@@ -80,16 +80,16 @@ def test_can_move_any_size_of_snake_infinitely_across_the_board():
     show_board = ShowBoard()
 
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□', '□'],
-        ['■', '◙', '◙', '□', '□', '□']
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        ['■', '◙', '◙', ' ', ' ', ' ']
     ])
     for i in range(3):
         move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '□', '□', '□'],
-        ['□', '□', '□', '■', '◙', '◙']
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', '■', '◙', '◙']
     ])
 
 
@@ -107,40 +107,40 @@ def test_can_turn_the_snake_in_any_direction():
     show_board = ShowBoard()
 
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□'],
-        ['□', '□', '□', '□'],
-        ['□', '□', '□', '□'],
-        ['■', '□', '□', '◙']
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        ['■', ' ', ' ', '◙']
     ])
     turn_snake.execute('N', snake)
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□'],
-        ['□', '□', '□', '□'],
-        ['■', '□', '□', '□'],
-        ['◙', '□', '□', '□']
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        ['■', ' ', ' ', ' '],
+        ['◙', ' ', ' ', ' ']
     ])
     turn_snake.execute('E', snake)
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□'],
-        ['□', '□', '□', '□'],
-        ['◙', '■', '□', '□'],
-        ['□', '□', '□', '□']
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        ['◙', '■', ' ', ' '],
+        [' ', ' ', ' ', ' ']
     ])
     turn_snake.execute('N', snake)
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '□', '□', '□'],
-        ['□', '■', '□', '□'],
-        ['□', '◙', '□', '□'],
-        ['□', '□', '□', '□']
+        [' ', ' ', ' ', ' '],
+        [' ', '■', ' ', ' '],
+        [' ', '◙', ' ', ' '],
+        [' ', ' ', ' ', ' ']
     ])
     turn_snake.execute('S', snake)
     move_snake.execute(board, snake)
     assert_that(show_board.execute(board, snake)).is_equal_to([
-        ['□', '■', '□', '□'],
-        ['□', '◙', '□', '□'],
-        ['□', '□', '□', '□'],
-        ['□', '□', '□', '□']
+        [' ', '■', ' ', ' '],
+        [' ', '◙', ' ', ' '],
+        [' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ']
     ])
