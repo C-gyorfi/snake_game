@@ -1,12 +1,11 @@
 import time
 import curses
-import random
 from src.domain.snake import Snake
+from src.domain.board import Board
+from src.domain.coordinate import Coordinate
 from src.use_case.move_snake import MoveSnake
 from src.use_case.turn_snake import TurnSnake
 from src.use_case.show_board import ShowBoard
-from src.domain.board import Board
-from src.domain.coordinate import Coordinate
 
 # Init game objects
 board = Board(width=10, height=10)
@@ -17,6 +16,8 @@ turn_snake = TurnSnake()
 
 # initialize application
 stdscr = curses.initscr()
+#get non-blocking user input
+stdscr.timeout(100)
 
 # tweak terminal settings
 curses.noecho()
@@ -24,8 +25,22 @@ curses.cbreak()
 stdscr.keypad(True)
 curses.curs_set(0)
 
+# get user input for direction
+def getDirection():
+  key = stdscr.getch()
+  if key == curses.KEY_RIGHT:
+    return 'E'
+  elif key == curses.KEY_LEFT:
+    return 'W'
+  elif key == curses.KEY_DOWN:
+    return 'S'
+  elif key == curses.KEY_UP:
+    return 'N'
+  else:
+    return None
+
 game_over = False
-while 1:
+while not game_over:
   for i, row in enumerate(show_board.execute(board, snake)):
     current_row = ' '.join(row)
     stdscr.addstr(i, 10, current_row)
@@ -33,7 +48,8 @@ while 1:
   stdscr.refresh()
   # wait for a bit
   time.sleep(0.3)
-  turn_snake.execute(random.choice(['N', 'E', 'S', 'W']), snake)
+  direction = getDirection()
+  turn_snake.execute(direction, snake)
   move_snake.execute(board, snake)
 
 stdscr.clear()
