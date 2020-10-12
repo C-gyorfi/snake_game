@@ -37,3 +37,7 @@ Auto fix linting errors
 ```bash
 make auto-lint
 ```
+Run the game
+```bash
+make run
+```

@@ -20,3 +20,6 @@ auto-lint:
 
 auto-lint-aggressive:
 	pipenv run autopep8 --in-place --aggressive --aggressive --recursive .
+
+run:
+	pipenv run python ./game.py
