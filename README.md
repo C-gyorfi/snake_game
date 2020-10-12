@@ -7,6 +7,7 @@ My journey of learning python by creating a [snake game](https://en.wikipedia.or
 ## Contents 📗
 - [Dependencies](#dependencies🕸️)
 - [Setup and tests](#setup🔧)
+- [Run](#run)
 
 ### [Dependencies](https://github.com/C-gyorfi/snake_game/blob/master/Pipfile)🕸️
 - Test are run by [Pytest](https://pypi.org/project/pytest/) 🧪 
@@ -37,7 +38,9 @@ Auto fix linting errors
 ```bash
 make auto-lint
 ```
-Run the game
+
+### [Run]()
+Run the game in the terminal🏃‍♀️
 ```bash
 make run
 ```
