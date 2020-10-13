@@ -1,3 +1,6 @@
+import random
+
+
 class ShowBoard:
     EMPTY_TILE = ' '
     HEAD = '■'
@@ -39,5 +42,5 @@ class ShowBoard:
                 y_coordinate_of_board = (len(board) - i) - 1
                 for coordinate in food:
                     if coordinate.y == y_coordinate_of_board:
-                        row[coordinate.x] = ShowBoard.FRUITS[0]
+                        row[coordinate.x] = random.choice(ShowBoard.FRUITS)
         return board
